@@ -78,7 +78,25 @@ h1, p, a, button, #close{
 .popup a:hover{
     background-color: #afa2cc;
 }
-
+span{
+    display: block;
+    width: 300px;
+    position: relative;
+    top: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: #ded9e9;
+    color: #37275a;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: courgette;
+    cursor: pointer;
+    border: none;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Yanone+Kaffeesatz:wght@300;400;500;700&display=swap');
 
@@ -146,7 +164,7 @@ body{
   border-radius: 15px;
   cursor: pointer;
   font-size: 30px;
-  padding-top:7px;
+  padding-top: 7px;
 }
 
 .comeup .form h2{
@@ -191,6 +209,43 @@ margin: 15px 0px;
 }
 
 .rooms{
-  width: 450px;
-  
+  background: url(./images/mainbg.webp);
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 380px;
+  height: 60%;
+  padding: 20px 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+.rooms.active{
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.25);
+  transition: top 0ms ease-in-out 0ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+.rooms .close{
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: #8677a1;
+  color: #fff;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 30px;
+  padding-top:3px;
+  border: none;
 }

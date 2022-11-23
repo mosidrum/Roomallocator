@@ -15,7 +15,14 @@ document.querySelector("#show-comeup").addEventListener("click", function () {
     document.querySelector(".comeup").classList.add("active");
 });
 
+document.querySelector("#view-up").addEventListener("click", function () {
+    document.querySelector(".rooms").classList.add("active");
+});
+
 document.querySelector(".comeup .close-btn").addEventListener("click", function () {
     document.querySelector(".comeup").classList.remove("active");
 });
 
+document.querySelector(".rooms .close").addEventListener("click", function () {
+    document.querySelector(".rooms").classList.remove("active");
+});
