@@ -31,12 +31,12 @@ document.querySelector(".rooms .close").addEventListener("click", function () {
 // DOM Element
 const allocate = e => {
 
-   let devData = JSON.parse(localStorage.getItem('devData')) || [];
+    let devData = JSON.parse(localStorage.getItem('devData')) || [];
     devData.push({
-            name: document.getElementById('name').value,
-            gender: document.getElementById('gender').value,
-            type: document.getElementById('type').value,
-            skillset: document.getElementById('skillset').value
+        name: document.getElementById('name').value,
+        gender: document.getElementById('gender').value,
+        type: document.getElementById('type').value,
+        skillset: document.getElementById('skillset').value
 
     });
 
@@ -54,11 +54,15 @@ function displayDevData() {
         output.innerHTML = "";
         JSON.parse(localStorage.getItem('devData')).forEach(data => {
             output.innerHTML += `
-            <div>
-                <label>Name</label>
-            </div>
+            <tr>
+                <td>${data.name}</td>
+                <td>${data.gender}</td>
+                <td>${data.type}</td>
+                <td>${data.skillset}</td>
+            </tr>
             `;
         });
     }
 }
 
+displayDevData();
