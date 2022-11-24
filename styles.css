@@ -133,7 +133,7 @@ body{
   opacity: 0;
   transform: translate(-50%, -50%) scale(1.25);
   width: 380px;
-  padding: 20px 30px;
+  padding: 0px 30px;
   background: #fff;
   box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
   border-radius: 10px;
@@ -153,18 +153,22 @@ body{
 }
 
 .comeup .close-btn{
-  position: absolute;
-  right: 20px;
+  position: relative;
+  top: 40px;
+  right: -290px;
   width: 30px;
   height: 30px;
-  background: #8677a1;
-  color: #fff;
+  background: #eee;
+  color: #37275a;
   text-align: center;
   line-height: 15px;
   border-radius: 15px;
   cursor: pointer;
   font-size: 30px;
   padding-top: 7px;
+}
+.comeup .close-btn:hover{
+  background-color: #8677a1;
 }
 
 .comeup .form h2{
@@ -215,7 +219,7 @@ margin: 15px 0px;
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(1.25);
-  width: 380px;
+  width: 440px;
   height: 60%;
   padding: 20px 30px;
   background: #fff;
@@ -239,8 +243,8 @@ margin: 15px 0px;
   right: 20px;
   width: 30px;
   height: 30px;
-  background: #8677a1;
-  color: #fff;
+  background: #eee;
+  color: #37275a;
   text-align: center;
   line-height: 15px;
   border-radius: 15px;
@@ -248,4 +252,12 @@ margin: 15px 0px;
   font-size: 30px;
   padding-top:3px;
   border: none;
+}
+.rooms .close:hover{
+  background-color: #8677a1;
+}
+tbody, tr, th, td{
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  color: #37275a;
 }
