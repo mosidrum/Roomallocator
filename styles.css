@@ -212,7 +212,7 @@ margin: 15px 0px;
   margin-top: 5px;
 }
 
-.rooms{
+#rooms{
   background: url(./images/mainbg.webp);
   position: absolute;
   top: -150%;
@@ -230,7 +230,7 @@ margin: 15px 0px;
               opacity 200ms ease-in-out 0ms,
               transform 20ms ease-in-out 0ms;
 }
-.rooms.active{
+#rooms.active{
   top: 50%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1.25);
@@ -238,7 +238,7 @@ margin: 15px 0px;
               opacity 200ms ease-in-out 0ms,
               transform 20ms ease-in-out 0ms;
 }
-.rooms .close{
+#rooms .close{
   position: absolute;
   right: 20px;
   width: 30px;
@@ -260,4 +260,27 @@ tbody, tr, th, td{
   border: 1px solid #eee;
   padding: 5px 10px;
   color: #37275a;
+}
+.comeup .form .form-room{
+  margin: 15px 0;
+}
+.comeup .form .form-room #room-number, #room-btn{
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-family: courgette;
+}
+/* .comeup .form .form-room button{
+  color: #bdb3d1;
+  background: #241442;
+  padding: 2px 2px;
+} */
+.comeup .form .form-room button:hover{
+  background: #8677a1;
+  color: #241442;
+  cursor: pointer;
 }

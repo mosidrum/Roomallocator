@@ -16,53 +16,52 @@ document.querySelector("#show-comeup").addEventListener("click", function () {
 });
 
 document.querySelector("#view-up").addEventListener("click", function () {
-    document.querySelector(".rooms").classList.add("active");
+    document.querySelector("#rooms").classList.add("active");
 });
 
 document.querySelector(".comeup .close-btn").addEventListener("click", function () {
     document.querySelector(".comeup").classList.remove("active");
 });
 
-document.querySelector(".rooms .close").addEventListener("click", function () {
-    document.querySelector(".rooms").classList.remove("active");
+document.querySelector("#rooms .close").addEventListener("click", function () {
+    document.querySelector("#rooms").classList.remove("active");
 });
 
 
+// const number = document.getElementById('room-number');
+// const button = document.getElementById('room-btn');
+
+// const randomNumberGenerate = () => {
+//     const randomNumber = Math.floor(Math.random() * 50 + 1);
+
+//     number.textContent = randomNumber
+//     console.log(randomNumber)
+// };
+// button.addEventListener('click', randomNumberGenerate)
+// randomNumberGenerate();
+
 // DOM Element
 const allocate = e => {
-
-    let devData = JSON.parse(localStorage.getItem('devData')) || [];
-    devData.push({
+    let devData = {
         name: document.getElementById('name').value,
         gender: document.getElementById('gender').value,
         type: document.getElementById('type').value,
-        skillset: document.getElementById('skillset').value
-
-    });
-
+        skillset: document.getElementById('skillset').value,
+        roomNum: document.getElementById('room-num').value
+    }
     localStorage.setItem('devData', JSON.stringify(devData));
-    displayDevData();
     // console.log(localStorage.getItem('devData'));
-    document.querySelector('form').reset();
+    displayDevData();
     e.preventDefault();
 }
 
+
 function displayDevData() {
-    console.log(localStorage.getItem('devData'));
-    if (localStorage.getItem('devData')) {
-        var output = document.querySelector('.rooms');
-        output.innerHTML = "";
-        JSON.parse(localStorage.getItem('devData')).forEach(data => {
-            output.innerHTML += `
-            <tr>
-                <td>${data.name}</td>
-                <td>${data.gender}</td>
-                <td>${data.type}</td>
-                <td>${data.skillset}</td>
-            </tr>
-            `;
-        });
-    }
+    let { name, gender, type, skillset, roomNum } = JSON.parse(localStorage.getItem('devData'));
+    var output = document.getElementById('#rooms');
+
+    output.innerHTML = `
+
+    `
 }
 
-displayDevData();

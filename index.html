@@ -18,6 +18,7 @@
       <button id="view-up">View allocations</button>
   </div>
   <div class="comeup">
+    <form role="form" onsubmit="allocate(event);">
     <div class="close-btn">&times;</div>
     <div class="form">
       <h2>Add a developer</h2>
@@ -51,11 +52,22 @@
         </select>
       </div>
       <div class="form-element">
-        <button onclick="allocate(event);">Allocate room</button>
+        <label for="name">Room Number</label>
+        <select name="room-num" id="room-num" required>
+        <option value="" disabled selected>Select a room</option>
+        <option value="Room 1">Room 1</option>
+        <option value="Room 2">Room 2</option>
+        <option value="Room 3">Room 3</option>
+        <option value="Room 3">Room 4</option>
+        </select>
+      </div>
+      <div class="form-element">
+        <button type="submit">Allocate room</button>
       </div>
     </div>
+    </form>
   </div>
-  <div class="rooms">
+  <div id="rooms">
     <button class="close">&times</button>
     <table>
       <thead>
@@ -66,7 +78,7 @@
               <th>Type</th>
               <th>Skillset</th>
           </tr>
-          <tbody>
+          <tbody id="rooms">
               <!-- diplay user's data -->
           </tbody>
       </thead>
