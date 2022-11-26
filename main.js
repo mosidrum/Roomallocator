@@ -7,9 +7,9 @@ window.addEventListener("load", function () {
     )
 })
 
-document.querySelector('#close').addEventListener("click", function () {
-    document.querySelector(".popup").style.display = "none";
-});
+// document.querySelector('#close').addEventListener("click", function () {
+//     document.querySelector(".popup").style.display = "none";
+// });
 
 document.querySelector("#show-comeup").addEventListener("click", function () {
     document.querySelector(".comeup").classList.add("active");
@@ -23,9 +23,9 @@ document.querySelector(".comeup .close-btn").addEventListener("click", function 
     document.querySelector(".comeup").classList.remove("active");
 });
 
-document.querySelector("#rooms .close").addEventListener("click", function () {
-    document.querySelector("#rooms").classList.remove("active");
-});
+// document.querySelector("#rooms .close").addEventListener("click", function () {
+//     document.querySelector("#rooms").classList.remove("active");
+// });
 
 
 // const number = document.getElementById('room-number');
@@ -50,18 +50,43 @@ const allocate = e => {
         roomNum: document.getElementById('room-num').value
     }
     localStorage.setItem('devData', JSON.stringify(devData));
-    // console.log(localStorage.getItem('devData'));
+    console.log(localStorage.getItem('devData'));
     displayDevData();
+    document.querySelector('form').reset();
+    document.getElementById('name').focus();
     e.preventDefault();
 }
 
 
 function displayDevData() {
-    let { name, gender, type, skillset, roomNum } = JSON.parse(localStorage.getItem('devData'));
-    var output = document.getElementById('#rooms');
+    // console.log(localStorage.getItem('devData'));
+    if (localStorage.getItem('devData')){
+        let {name, gender, type, skillset, roomNum} = JSON.parse(localStorage.getItem('devData'));
+        var output = document.getElementById('output');
 
-    output.innerHTML = `
+            output.innerHTML = `
+            <table>
+                <tbody>
+                    <tr>
+                    <td>${name}</td>
+                    </tr>
+                    <tr>
+                    <td>${gender}</td>
+                    </tr>
+                    <tr>
+                    <td>${type}</td>
+                    </tr>
+                    <tr>
+                    <td>${skillset}</td>
+                    </tr>
+                    <tr>
+                    <td>${roomNum}</td>
+                    </tr>
+                </tbody>
+            </table>
+            `;
+    }
 
-    `
 }
+displayDevData();
 
