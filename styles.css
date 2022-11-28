@@ -171,9 +171,64 @@ margin: 15px 0px;
   border-radius: 5px;
   font-family: courgette;
 }
-
 .comeup .form .form-room button:hover{
   background: #8677a1;
   color: #241442;
   cursor: pointer;
+}
+#output{
+  width: 330px;
+  background: #11042e;
+  color: white;
+}
+#output{
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 380px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #a499bb;
+  background: #11042e;
+  box-shadow: 2px 2px 5px 5px rgba(150, 86, 209, 0.15);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+#output.active{
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.25);
+  transition: top 0ms ease-in-out 0ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+table{
+  opacity: ;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+#output tr, th, td{
+  padding: 5px;
+  border: 1px solid #a499bb;
+  margin-top: 50px;
+}
+#output #cancel{
+  color: #eee;
+  background: #37275a;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 165px;
+  margin-top: 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+#cancel:hover{
+  background-color: #bfb6d4;
+  color: #241442;
 }

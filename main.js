@@ -7,12 +7,13 @@ window.addEventListener("load", function () {
     )
 })
 
-// document.querySelector('#close').addEventListener("click", function () {
-//     document.querySelector(".popup").style.display = "none";
-// });
+document.querySelector('#view-up').addEventListener("click", function () {
+    document.querySelector("#output").classList.add("active");
+});
 
 document.querySelector("#show-comeup").addEventListener("click", function () {
     document.querySelector(".comeup").classList.add("active");
+
 });
 
 document.querySelector("#view-up").addEventListener("click", function () {
@@ -21,6 +22,10 @@ document.querySelector("#view-up").addEventListener("click", function () {
 
 document.querySelector(".comeup .close-btn").addEventListener("click", function () {
     document.querySelector(".comeup").classList.remove("active");
+});
+
+document.querySelector('#cancel').addEventListener("click", function () {
+    alert("Hello");
 });
 
 // document.querySelector("#rooms .close").addEventListener("click", function () {
@@ -53,37 +58,52 @@ const allocate = e => {
     console.log(localStorage.getItem('devData'));
     displayDevData();
     document.querySelector('form').reset();
+    alert("Operation successful");
     document.getElementById('name').focus();
     e.preventDefault();
 }
 
+const saveData = (data) => {
+    const devData = JSON.parse(localStorage.getItem('devData'));
+    // spread operator
+    const newData = [...devData, data]
+    localStorage.setItem('devData', newData);
+  }
 
 function displayDevData() {
     // console.log(localStorage.getItem('devData'));
-    if (localStorage.getItem('devData')){
-        let {name, gender, type, skillset, roomNum} = JSON.parse(localStorage.getItem('devData'));
+    if (localStorage.getItem('devData')) {
+        let { name, gender, type, skillset, roomNum } = JSON.parse(localStorage.getItem('devData'));
         var output = document.getElementById('output');
 
-            output.innerHTML = `
+        output.innerHTML = `
+            <div>
             <table>
                 <tbody>
                     <tr>
+                    <th>Name</th>
                     <td>${name}</td>
                     </tr>
                     <tr>
+                    <th>Gender</th>
                     <td>${gender}</td>
                     </tr>
                     <tr>
+                    <th>Type</th>
                     <td>${type}</td>
                     </tr>
                     <tr>
+                    <th>Skillset</th>
                     <td>${skillset}</td>
                     </tr>
                     <tr>
+                    <th>Room Number</th>
                     <td>${roomNum}</td>
                     </tr>
                 </tbody>
             </table>
+            <button id="cancel">OKAY</button>
+            </div>
             `;
     }
 
